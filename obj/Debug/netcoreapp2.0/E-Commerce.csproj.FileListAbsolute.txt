@@ -1,0 +1,11 @@
+C:\Users\angie\Desktop\coding-dojo\c#\ORMS\E-Commerce\bin\Debug\netcoreapp2.0\E-Commerce.deps.json
+C:\Users\angie\Desktop\coding-dojo\c#\ORMS\E-Commerce\bin\Debug\netcoreapp2.0\E-Commerce.runtimeconfig.json
+C:\Users\angie\Desktop\coding-dojo\c#\ORMS\E-Commerce\bin\Debug\netcoreapp2.0\E-Commerce.runtimeconfig.dev.json
+C:\Users\angie\Desktop\coding-dojo\c#\ORMS\E-Commerce\bin\Debug\netcoreapp2.0\E-Commerce.dll
+C:\Users\angie\Desktop\coding-dojo\c#\ORMS\E-Commerce\bin\Debug\netcoreapp2.0\E-Commerce.pdb
+C:\Users\angie\Desktop\coding-dojo\c#\ORMS\E-Commerce\obj\Debug\netcoreapp2.0\E-Commerce.csprojAssemblyReference.cache
+C:\Users\angie\Desktop\coding-dojo\c#\ORMS\E-Commerce\obj\Debug\netcoreapp2.0\E-Commerce.csproj.CoreCompileInputs.cache
+C:\Users\angie\Desktop\coding-dojo\c#\ORMS\E-Commerce\obj\Debug\netcoreapp2.0\E-Commerce.AssemblyInfoInputs.cache
+C:\Users\angie\Desktop\coding-dojo\c#\ORMS\E-Commerce\obj\Debug\netcoreapp2.0\E-Commerce.AssemblyInfo.cs
+C:\Users\angie\Desktop\coding-dojo\c#\ORMS\E-Commerce\obj\Debug\netcoreapp2.0\E-Commerce.dll
+C:\Users\angie\Desktop\coding-dojo\c#\ORMS\E-Commerce\obj\Debug\netcoreapp2.0\E-Commerce.pdb

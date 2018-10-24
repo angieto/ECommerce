@@ -1,0 +1,15 @@
+@model E_Commerce.Models.Customer
+<div class="container mx-auto mt-5">
+    <h4><u>Add a new customer</u></h4>
+    <form class="form-group my-4" asp-controller="Customer" asp-action="AddCustomer" method="post">
+        <div class="container row">
+            <div class="container col-10">
+                <span class="text-danger mt-2" asp-validation-for="Name"></span>
+                <input class="form-control d-inline" type="text" asp-for="Name" placeholder="Customer Name">
+            </div>
+            <div class="container col-2">
+                <button type="submit" class="btn btn-info d-inline">Add</button>
+            </div>
+        </div>
+    </form>
+</div>

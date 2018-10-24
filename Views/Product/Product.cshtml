@@ -1,0 +1,64 @@
+@model E_Commerce.Models.Product
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <title>E Commerce</title>
+</head>
+<body>
+    <div class="container-fluid mb-5">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="#">Store</a>
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/products">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/orders">Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/customers">Customers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/settings">Settings</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="container-fluid row mt-3">
+            <div class="container col-3">
+                <!-- Search box -->
+                @await Html.PartialAsync("Search.cshtml") 
+                <!-- Add a new product -->
+                <hr>
+                @await Html.PartialAsync("New.cshtml")
+            </div>
+            <div class="container row col-8 mt-5">
+                <!-- Display all products -->
+                @foreach (var product in @ViewBag.AllProducts)
+                {
+                    <div class="container mx-auto text-center col-3">
+                        <!-- When clicked, the link will redirect to the product's detail page -->
+                        <img src="@product.Img" alt="@product.Name" height="75" width="75">
+                        <a asp-action="ProductDetail" asp-controller="Product" asp-route-id="@product.ProductId">
+                            <p>@product.Name</p>
+                        </a>
+                        <!-- Display how many product left -->
+                        <p class="text-secondary">(@product.Qty left)</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

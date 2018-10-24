@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>E Commerce</title>
+</head>
+<body>
+    <div class="container-fluid mb-5">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="#">The Wall</a>
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Orders</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Customers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Settings</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Add new customer -->
+        @await Html.PartialAsync("New.cshtml")
+        <!-- Search box -->
+        @await Html.PartialAsync("Search.cshtml")
+        <!-- Display table -->
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Customer Name</th>
+                    <th scope="col">Created Date</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var customer in @Model)
+                {
+                    <tr>
+                        <td>@customer.Name</td>
+                        <td>@customer.CreatedAt</td>
+                        <td>
+                            <form asp-action="Delete" asp-controller="Customer" asp-route-id="@customer.CustomerId" method="post">
+                                <button type="submit" class="btn btn-danger">Remove</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+@model E_Commerce.Models.Order
+<div class="container mx-auto my-5">
+    <h4><u>Add a new order</u></h4>
+    <form class="form-group my-4" asp-controller="Order" asp-action="AddOrder" method="post">
+        <div class="container col-6">
+            <select class="form-control mt-3" asp-for="CustomerId" placeholder="Customer Name">
+                @foreach (var customer in @ViewBag.AllCustomers)
+                {
+                    <option value="@customer.CustomerId">@customer.Name</option>
+                }
+            </select>
+            <span class="text-danger mt-3" asp-validation-for="Amount"></span>
+            <input class="form-control mt-3" type="number" asp-for="Amount" placeholder="Amount">
+            <select class="form-control mt-3" asp-for="ProductId">
+                @foreach (var product in @ViewBag.AllProducts)
+                {
+                    <option value="@product.ProductId">@product.Name</option>
+                }
+            </select>
+            <div class="container my-3">
+                <button type="submit" class="btn btn-info float-right">Order</button>
+            </div>
+        </div>
+    </form>
+</div>
